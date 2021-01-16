@@ -1,7 +1,7 @@
 base   authdjango
 author Robert Czechowski
 email  robert+dokuwiki@czecho.de
-date   2018-03-30
-name   Django authentication plugin
+date   2021-01-16
+name   Arqueth fork of the Django authentication plugin
 desc   Allows for authentication using a django session
 url    https://www.dokuwiki.org/plugin:authdjango
