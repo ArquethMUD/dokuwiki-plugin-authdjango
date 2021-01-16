@@ -74,7 +74,7 @@ class auth_plugin_authdjango extends DokuWiki_Auth_Plugin  {
             //decrypting the session_data
             $session_json = preg_split('/:/', base64_decode($session_data), 2)[1];
             $userid = json_decode($session_json, true)['_auth_user_id'];
-            $query2 = 'SELECT username, first_name, last_name, email FROM auth_user WHERE id=' . $this->dbh->quote($userid) . ' LIMIT 1;';
+            $query2 = 'SELECT username, first_name, last_name, email FROM ' . $this->getConf('user_model') . ' WHERE id=' . $this->dbh->quote($userid) . ' LIMIT 1;';
 
             $result2 = $this->dbh->query($query2) or die('Query failed2: ' . print_r($this->dbh->errorInfo()));
             $user = $result2->fetch(PDO::FETCH_ASSOC);
